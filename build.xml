@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<project name="libSBOLcore" default="jar" basedir=".">
+	<property name="jar.filename" value="libSBOLcore.jar"/>
+	<property name="build.dir" value="build"/>
+	<property name="src.dir" value="src"/>
+
+	<target name="build">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime='false' />
+	</target>
+
+	<target name="jar" depends="build">
+		<jar jarfile="${jar.filename}">
+			<fileset dir="${build.dir}"/>
+		</jar>
+	</target>
+	
+</project>
