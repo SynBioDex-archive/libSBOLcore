@@ -28,6 +28,29 @@ public class SequenceAnnotation {
     private Integer end;
     private String strand;
     private Collection<DnaComponent> feature = new HashSet<DnaComponent>();
+    private Collection<SequenceAnnotation> preceeds = new HashSet<SequenceAnnotation>();
+
+    /**
+     *  
+     *
+     * 
+     *
+     * @param 
+     */
+    public Collection<SequenceAnnotation> getPreceeds() {
+        return preceeds;
+    }
+
+    /**
+     * 
+     *
+     * 
+     *
+     * @param 
+     */
+    public void setPreceeds(Collection<SequenceAnnotation> preceeds) {
+        this.preceeds = preceeds;
+    }
 
 
     /**
