@@ -48,8 +48,10 @@ public class SequenceAnnotation {
      *
      * @param 
      */
-    public void setPreceds(Collection<SequenceAnnotation> preceds) {
-        this.preceds = preceds;
+    public void addPreceds(SequenceAnnotation preceds) {
+        if (!getPreceds().contains(preceds)) {
+            getPreceds().add(preceds);
+        }
     }
 
 
