@@ -27,7 +27,7 @@ public class SequenceAnnotation {
     private Integer genbankStart;
     private Integer end;
     private String strand;
-    private Collection<DnaComponent> feature = new HashSet<DnaComponent>();
+    private Collection<DnaComponent> subComponents = new HashSet<DnaComponent>();
     private Collection<SequenceAnnotation> precedes = new HashSet<SequenceAnnotation>();
 
     /**
@@ -64,8 +64,8 @@ public class SequenceAnnotation {
      * @param feature to describe what is located at this annotation.
      */
     public void addFeature(DnaComponent feature) {
-        if (!getFeatures().contains(feature)) {
-            getFeatures().add(feature);
+        if (!getSubComponents().contains(feature)) {
+            getSubComponents().add(feature);
             //this.feature.add(feature);
         }
     }
@@ -81,8 +81,8 @@ public class SequenceAnnotation {
      * feature exists already.
      * @return collection of any features at this location
      */
-    public Collection<DnaComponent> getFeatures() {
-        return feature;
+    public Collection<DnaComponent> getSubComponents() {
+        return subComponents;
     }
 
     /**
@@ -175,7 +175,7 @@ public class SequenceAnnotation {
             if ((this.strand == null) ? (other.strand != null) : !this.strand.equals(other.strand)) {
                 return false;
             }
-            if (this.feature != other.feature && (this.feature == null || !this.feature.equals(other.feature))) {
+            if (this.subComponents != other.subComponents && (this.subComponents == null || !this.subComponents.equals(other.subComponents))) {
                 return false;
         }
         return true;
