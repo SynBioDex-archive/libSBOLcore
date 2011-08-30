@@ -28,7 +28,7 @@ public class SequenceAnnotation {
     private Integer end;
     private String strand;
     private Collection<DnaComponent> feature = new HashSet<DnaComponent>();
-    private Collection<SequenceAnnotation> preceds = new HashSet<SequenceAnnotation>();
+    private Collection<SequenceAnnotation> precedes = new HashSet<SequenceAnnotation>();
 
     /**
      *  
@@ -37,8 +37,8 @@ public class SequenceAnnotation {
      *
      * @param 
      */
-    public Collection<SequenceAnnotation> getPreceds() {
-        return preceds;
+    public Collection<SequenceAnnotation> getPrecedes() {
+        return precedes;
     }
 
     /**
@@ -48,9 +48,9 @@ public class SequenceAnnotation {
      *
      * @param 
      */
-    public void addPreceds(SequenceAnnotation preceds) {
-        if (!getPreceds().contains(preceds)) {
-            getPreceds().add(preceds);
+    public void addPreceds(SequenceAnnotation precedes) {
+        if (!getPrecedes().contains(precedes)) {
+            getPrecedes().add(precedes);
         }
     }
 
