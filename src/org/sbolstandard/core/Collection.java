@@ -131,36 +131,4 @@ public class Collection {
     public void setName(String name) {
         this.name = name;
     }
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Collection other = (Collection) obj;
-      
-            if ((this.displayId == null) ? (other.displayId != null) : !this.displayId.equals(other.displayId)) {
-                return false;
-            }
-            if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
-                return false;
-            }
-            if ((this.description == null) ? (other.description != null) : !this.description.equals(other.description)) {
-                return false;
-            }
-            if (this.component != other.component && (this.component == null || !this.component.equals(other.component))) {
-                return false;
-            }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-       // return getRdfId() == null ? 0 : getRdfId().value().hashCode();
-        return 0;
-    }
 }

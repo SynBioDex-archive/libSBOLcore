@@ -172,44 +172,4 @@ public class DnaComponent {
      * @return true if another object is equivalent to this one, false otherwise
      *         (including null parameter)
      */
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        final DnaComponent other = (DnaComponent) obj;
-
-            if ((this.displayId == null) ? (other.displayId != null) : !this.displayId.equals(other.displayId)) {
-                return false;
-            }
-            if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
-                return false;
-            }
-            if ((this.description == null) ? (other.description != null) : !this.description.equals(other.description)) {
-                return false;
-            }
-            if (this.isCircular != other.isCircular) {
-                return false;
-            }
-            if (this.type != other.type && (this.type == null || !this.type.equals(other.type))) {
-                return false;
-            }
-            if (this.dnaSequence != other.dnaSequence && (this.dnaSequence == null || !this.dnaSequence.equals(other.dnaSequence))) {
-                return false;
-            }
-            if (this.annotation != other.annotation && (this.annotation == null || !this.annotation.equals(other.annotation))) {
-                return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-      //  return getRdfId() == null ? 0 : getRdfId().value().hashCode();
-        return 0; 
-    }
 }

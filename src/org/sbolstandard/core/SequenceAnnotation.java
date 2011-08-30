@@ -157,33 +157,4 @@ public class SequenceAnnotation {
         this.strand = strand;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final SequenceAnnotation other = (SequenceAnnotation) obj;
-            if (this.genbankStart != other.genbankStart) {
-                return false;
-            }
-            if ((this.end == null) ? (other.end != null) : !this.end.equals(other.end)) {
-                return false;
-            }
-            if ((this.strand == null) ? (other.strand != null) : !this.strand.equals(other.strand)) {
-                return false;
-            }
-            if (this.subComponents != other.subComponents && (this.subComponents == null || !this.subComponents.equals(other.subComponents))) {
-                return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-       // return getRdfId() == null ? 0 : getRdfId().value().hashCode();
-        return 0;  //change this 
-    }
 }

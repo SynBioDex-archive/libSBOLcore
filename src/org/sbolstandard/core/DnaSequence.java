@@ -47,25 +47,4 @@ public class DnaSequence {
     public void setNucleotides(String nucleotides) {
         this.nucleotides = nucleotides;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final DnaSequence other = (DnaSequence) obj;
-            if ((this.nucleotides == null) ? (other.nucleotides != null) : !this.nucleotides.equals(other.nucleotides)) {
-                return false;
-            }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-       // return getRdfId() == null ? 0 : getRdfId().value().hashCode();
-        return 0; // consider the hash based on org.apache.commons.codec.binary.Hex
-    }
 }
