@@ -37,7 +37,7 @@ public class Collection {
     private String displayId;
     private String name;
     private String description;
-    private java.util.Collection<DnaComponent> component = new HashSet<DnaComponent>();
+    private java.util.Collection<DnaComponent> components = new HashSet<DnaComponent>();
 
     /**
      * Elements that are intended as engineering components in synthetic biology.
@@ -49,7 +49,7 @@ public class Collection {
      * @return 0 or more <code>DnaComponent</code>[s] that are in this Collection
      */
     public java.util.Collection<DnaComponent> getComponents() {
-        return component;
+        return components;
     }
     /**
      * Defined DNA segment for engineering biological systems, which belongs to

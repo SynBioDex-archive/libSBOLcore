@@ -29,7 +29,7 @@ public class DnaComponent {
     private boolean isCircular;
     private Collection<URI> type = new HashSet<URI>();
     private DnaSequence dnaSequence;
-    private Collection<SequenceAnnotation> annotation = new HashSet<SequenceAnnotation>();
+    private Collection<SequenceAnnotation> annotations = new HashSet<SequenceAnnotation>();
 
     /**
      * Positions and directions of <code>SequenceFeature</code>[s] that describe
@@ -39,7 +39,7 @@ public class DnaComponent {
      * @see addAnnotation
      */
     public Collection<SequenceAnnotation> getAnnotations() {
-        return annotation;
+        return annotations;
     }
 
     /**
