@@ -1,9 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sbolstandard.core;
-
 
 import java.net.URI;
 import java.util.Collection;
@@ -16,20 +11,9 @@ import java.util.HashSet;
  * which can be described by SequenceAnnotation objects and must specify their
  * DnaSequence object. DnaComponents are expected to be found inside
  * a SBOL Collection object.
- *
- * @author mgaldzic
- * @since 0.6, 08/26/2011
  */
 
-public class DnaComponent {
-
-    private String displayId;
-    private String name;
-    private String description;
-    private boolean isCircular;
-    private Collection<URI> type = new HashSet<URI>();
-    private DnaSequence dnaSequence;
-    private Collection<SequenceAnnotation> annotations = new HashSet<SequenceAnnotation>();
+public interface DnaComponent {
 
     /**
      * Positions and directions of <code>SequenceFeature</code>[s] that describe
@@ -38,9 +22,7 @@ public class DnaComponent {
      * DNA composition
      * @see addAnnotation
      */
-    public Collection<SequenceAnnotation> getAnnotations() {
-        return annotations;
-    }
+    public Collection<SequenceAnnotation> getAnnotations();
 
     /**
      * New position and direction of a <code>SequenceFeature</code> that
@@ -48,12 +30,7 @@ public class DnaComponent {
      * The DnaComponent could be left un-annotated, but that condition is not a very useful to users.
      * @param annotation a <code>SequenceAnnotation</code> that describes the DNA composition
      */
-    public void addAnnotation(SequenceAnnotation annotation) {
-        if (!getAnnotations().contains(annotation)) {
-            getAnnotations().add(annotation);
-            //this.feature.add(feature);
-        }
-    }
+    public void addAnnotation(SequenceAnnotation annotation);
 
     /**
      * Text which is for users to read and interpret what this component is.
@@ -63,9 +40,7 @@ public class DnaComponent {
      * @return Human readable text describing the component
      * @see setDescription
      */
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription();
 
     /**
      * Text which is written for users to read and interpret. 
@@ -76,46 +51,36 @@ public class DnaComponent {
      * tags as that may break the Json.
      * @param description human readable text describing the component
      */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String description);
 
     /**
      * Identifier to display to users.
      * @return a human readable identifier
      */
-    public String getDisplayId() {
-        return displayId;
-    }
+    public String getDisplayId();
 
     /**
      * Identifier that users will see as reference to the DNA construct.
      * It should be unambiguous and is likely imported from source data. Otherwise
      * it should be generated.
-     * @todo It should be restricted to alphanumeric/underscore and starting with a
+     * It should be restricted to alphanumeric/underscore and starting with a
      * letter or underscore.
      * @param displayId a human readable identifier
      */
-    public void setDisplayId(String displayId) {
-        this.displayId = displayId;
-    }
+    public void setDisplayId(String displayId);
 
     /**
      * DNA sequence which this DnaComponent object represents.
      * @return 1 {@link DnaSequence} specifying the DNA sequence of this DnaComponent
      * @see DnaSequence
      */
-    public DnaSequence getDnaSequence() {
-        return dnaSequence;
-    }
+    public DnaSequence getDnaSequence();
 
     /**
      * DNA sequence which this DnaComponent object represents.
      * @param dnaSequence specify the DnaSequence of this DnaComponent
      */
-    public void setDnaSequence(DnaSequence dnaSequence) {
-        this.dnaSequence = dnaSequence;
-    }
+    public void setDnaSequence(DnaSequence dnaSequence);
 
     /**
      * The name is the most recognizable known identifier, it is often ambiguous.
@@ -123,9 +88,7 @@ public class DnaComponent {
      * understanding" in CSCW field for more.
      * @return its name, commonly used to refer to this DnaComponent
      */
-    public String getName() {
-        return name;
-    }
+    public String getName();
 
     /**
      * Common name of DNA component, confers meaning of what it is.
@@ -135,41 +98,22 @@ public class DnaComponent {
      * @param name its name, commonly used to refer to this DnaComponent (eg. pLac-O1)
      * @see getName
      */
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name);
 
     /**
      * Sequence Ontology vocabulary provides a defined term for types of DNA
      * components.
      * TO DO: implement use of SO within libSBOLj.
      * @return a Sequence Ontology (SO) vocabulary term to describe the type of DnaComponent.
-     * @todo When serialized to RDF this is a URI, so when read from persistence it should become
-     * one of the SO human readable vocabulary terms. Note:I should allow many types
      */
-    public Collection<URI> getTypes() {
-        return type;
-    }
+    public Collection<URI> getTypes();
 
     /**
      * Sequence Ontology vocabulary provides a defined term for types of DNA
      * components.
      *
      * @param type Sequence Ontology URI specifying the type of the DnaComponent
-     * @see setType
      */
-    public void addType(URI type) {
-        if (!getTypes().contains(type)) {
-            getTypes().add(type);
-        //this.type.add(type);
-        }
-    }
+    public void addType(URI type);
 
-    /**
-     * Checks whether the other object is an equivalent DnaComponent
-     * @param obj other object to be checked for equivalence with this one
-     *        (may be null, as specified in generic Object.equals(Object) contract)
-     * @return true if another object is equivalent to this one, false otherwise
-     *         (including null parameter)
-     */
 }

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sbolstandard.core;
 
 import java.util.Collection;
@@ -18,42 +14,10 @@ import java.util.HashSet;
  * The direction of the feature is specified by the strand [+/-]. Sequences used
  * are by convention assumed 5' to 3', therefore the <code>+</code> strand is
  * 5' to 3' and the <code>-</code> strand is 3' to 5'.
- *
- * @author mgaldzic
- * @since  0.6, 08/26/2011
  */
-public class SequenceAnnotation {
+public interface SequenceAnnotation {
 
-    private Integer genbankStart;
-    private Integer end;
-    private String strand;
-    private Collection<DnaComponent> subComponents = new HashSet<DnaComponent>();
-    private Collection<SequenceAnnotation> precedes = new HashSet<SequenceAnnotation>();
-
-    /**
-     *  
-     *
-     * 
-     *
-     * @param 
-     */
-    public Collection<SequenceAnnotation> getPrecedes() {
-        return precedes;
-    }
-
-    /**
-     * 
-     *
-     * 
-     *
-     * @param 
-     */
-    public void addPreceds(SequenceAnnotation precedes) {
-        if (!getPrecedes().contains(precedes)) {
-            getPrecedes().add(precedes);
-        }
-    }
-
+    public void addPreceds(SequenceAnnotation precedes);
 
     /**
      * Place a SequenceFeature at this.start, .stop, .strand location.
@@ -63,12 +27,7 @@ public class SequenceAnnotation {
      *
      * @param feature to describe what is located at this annotation.
      */
-    public void addFeature(DnaComponent feature) {
-        if (!getSubComponents().contains(feature)) {
-            getSubComponents().add(feature);
-            //this.feature.add(feature);
-        }
-    }
+    public void addFeature(DnaComponent feature);
 
     /**
      * Describe the segments of DNA sequence from start to stop on the strand.
@@ -81,9 +40,7 @@ public class SequenceAnnotation {
      * feature exists already.
      * @return collection of any features at this location
      */
-    public Collection<DnaComponent> getSubComponents() {
-        return subComponents;
-    }
+    public Collection<DnaComponent> getSubComponents();
 
     /**
      * First position of the Sequence Feature being annotated.
@@ -93,9 +50,7 @@ public class SequenceAnnotation {
      *
      * @return positive integer coordinate of first base of the SequenceFeature.
      */
-    public int getGenbankStart() {
-        return genbankStart;
-    }
+    public int getGenbankStart();
 
     /**
      * First position of the feature on the DnaComponent.
@@ -104,9 +59,7 @@ public class SequenceAnnotation {
      *
      * @param genbankStart positive integer coordinate of first base of the SequenceFeature
      */
-    public void setGenbankStart(int genbankStart) {
-        this.genbankStart = genbankStart;
-    }
+    public void setGenbankStart(int genbankStart);
 
     /**
      * Last position of the Sequence Feature on the DnaComponent.
@@ -115,18 +68,14 @@ public class SequenceAnnotation {
      *
      * @return positive integer coordinate of last base of the SequenceFeature
      */
-    public Integer getEnd() {
-        return end;
-    }
+    public Integer getEnd();
 
     /**
      * Last position of the feature on the DnaComponent.
      *
      * @param end positive integer coordinate of last base of the SequenceFeature
      */
-    public void setEnd(Integer end) {
-        this.end = end;
-    }
+    public void setEnd(Integer end);
 
     /**
      * Orientation of feature is the + or - strand.
@@ -138,9 +87,7 @@ public class SequenceAnnotation {
      * @return <code>+</code> if feature aligns in same direction as DnaComponent,
      *         <code>-</code> if feature aligns in opposite direction as DnaComponent.
      */
-    public String getStrand() {
-        return strand;
-    }
+    public String getStrand();
 
     /**
      * Orientation + or - of the feature relative to the DNA sequence of
@@ -153,8 +100,6 @@ public class SequenceAnnotation {
      * @param strand <code>+</code> if feature aligns in same direction as DnaComponent,
      *               <code>-</code> if feature aligns in opposite direction as DnaComponent.
      */
-    public void setStrand(String strand) {
-        this.strand = strand;
-    }
+    public void setStrand(String strand);
 
 }

@@ -1,10 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sbolstandard.core;
-
-//import org.apache.commons.codec.binary.Hex;
 
 /**
  * The SBOL data model's DnaSequence.
@@ -16,21 +10,14 @@ package org.sbolstandard.core;
  * Sequence Features is very important for the ability to replicate synthetic
  * biology work. Both experimental work and theoretical sequence composition
  * research heavily depends on this information.
- *
- * @author mgaldzic
- * @since  0.6, 08/26/2011
  */
-public class DnaSequence {
-    private String nucleotides;
+public interface DnaSequence {
 
     /**
      * The sequence of DNA base pairs which are described.
      * @return a string representation of the DNA base-pair sequence
-     * @see setDnaSequence
      */
-    public String getNucleotides() {
-        return nucleotides;
-    }
+    public String getNucleotides();
 
     /**
      * The sequence of DNA base pairs which are going to be described.
@@ -44,7 +31,5 @@ public class DnaSequence {
      *
      * @param nucleotides a sequence of [a|c|t|g] letters
      */
-    public void setNucleotides(String nucleotides) {
-        this.nucleotides = nucleotides;
-    }
+    public void setNucleotides(String nucleotides);
 }

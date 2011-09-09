@@ -1,11 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.sbolstandard.core;
 
 
-//import java.util.Collection;
 import java.util.HashSet;
 
 /**
@@ -19,25 +14,9 @@ import java.util.HashSet;
  * sites, such as the features commonly used for BBF RFC 10 BioBricks. A Collection
  * could contain all the DNA components used in a specific project, lab, or any
  * custom grouping specified by the user.
- *
- * COMMENT: Mike Galdzicki thinks Collection is a Generic metadata object. This metadata
- * element, is a set. It would be best defined by queries, when there is information
- * that groups the collection. Arbitrary groupings and new Collection objects should
- * not be created and named when the groupings are not defined, but also Libraries
- * should not be created whenever an arbitrary set is possible, only create if useful.
- * Extensions for useful computable objects should be proposed to help Collection
- * definitions.
- *
- * @author mgaldzic
- * @since  0.6.0, 08/26/2011
  */
 
-public class Collection {
-   
-    private String displayId;
-    private String name;
-    private String description;
-    private java.util.Collection<DnaComponent> components = new HashSet<DnaComponent>();
+public interface Collection {
 
     /**
      * Elements that are intended as engineering components in synthetic biology.
@@ -48,9 +27,8 @@ public class Collection {
      *
      * @return 0 or more <code>DnaComponent</code>[s] that are in this Collection
      */
-    public java.util.Collection<DnaComponent> getComponents() {
-        return components;
-    }
+    public java.util.Collection<DnaComponent> getComponents();
+
     /**
      * Defined DNA segment for engineering biological systems, which belongs to
      * this Collection.
@@ -61,11 +39,7 @@ public class Collection {
      *
      * @param component a <code>DnaComponent</code> that should be a member of this collection
      */
-    public void addComponent(DnaComponent component) {
-        if (!getComponents().contains(component)) {
-            getComponents().add(component);
-        }
-    }
+    public void addComponent(DnaComponent component);
 
     /**
      * Text which is for users to read and interpret what this Collection is.
@@ -79,9 +53,7 @@ public class Collection {
      * members of this Collection.
      * @return Human readable text describing the Collection
      */
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription();
 
     /**
      * Text with an informative statement about the reason for grouping the Collection members.
@@ -93,34 +65,26 @@ public class Collection {
      *
      * @param description Human readable text describing the Collection
      */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    public void setDescription(String description);
 
     /**
      * Identifier to display to users.
      * @return a human readable identifier
      */
-    public String getDisplayId() {
-        return displayId;
-    }
+    public String getDisplayId();
 
     /**
      * Identifier to display to users.
      * @param displayId a human readable identifier
      */
-    public void setDisplayId(String displayId) {
-        this.displayId = displayId;
-    }
+    public void setDisplayId(String displayId);
 
     /**
      * Recognizable human identifier, it is often ambiguous.(eg. Mike's Arabidopsis Project A;
      * Sleight, et al. (2010) J.Bioeng; BBF RFC 10 features; Bookmarked Parts).
      * @return its name, commonly used to refer to this Collection
      */
-    public String getName() {
-        return name;
-    }
+    public String getName();
 
     /**
      * Common name of Collection should confer what is contained in the Collection.
@@ -128,7 +92,6 @@ public class Collection {
      * Sleight, et al. (2010) J.Bioeng; BBF RFC 10 features; Bookmarked Parts).
      * @param name commonly used to refer to this Collection (eg. Project A)
      */
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name);
+
 }
