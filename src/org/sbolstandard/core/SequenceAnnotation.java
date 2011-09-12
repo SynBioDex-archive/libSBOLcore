@@ -70,14 +70,14 @@ public interface SequenceAnnotation {
      *
      * @return positive integer coordinate of last base of the SequenceFeature
      */
-    public Integer getEnd();
+    public int getEnd();
 
     /**
      * Last position of the feature on the DnaComponent.
      *
      * @param end positive integer coordinate of last base of the SequenceFeature
      */
-    public void setEnd(Integer end);
+    public void setEnd(int end);
 
     /**
      * Orientation of feature is the + or - strand.
