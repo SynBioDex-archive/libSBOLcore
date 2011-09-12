@@ -4,6 +4,11 @@
 	<property name="build.dir" value="build"/>
 	<property name="src.dir" value="src"/>
 
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete file="${jar.filename}" />
+	</target>
+
 	<target name="build">
 		<mkdir dir="${build.dir}"/>
 		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime='false' />

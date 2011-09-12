@@ -17,6 +17,8 @@ import java.util.HashSet;
  */
 public interface SequenceAnnotation {
 
+    public Collection<SequenceAnnotation> getPrecedes();
+
     public void addPreceds(SequenceAnnotation precedes);
 
     /**
