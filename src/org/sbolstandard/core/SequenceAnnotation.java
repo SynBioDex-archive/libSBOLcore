@@ -19,7 +19,7 @@ public interface SequenceAnnotation {
 
     public Collection<SequenceAnnotation> getPrecedes();
 
-    public void addPrecedes(SequenceAnnotation precedes);
+    public void addPrecede(SequenceAnnotation precede);
 
     /**
      * Place a SequenceFeature at this.start, .stop, .strand location.
@@ -42,7 +42,7 @@ public interface SequenceAnnotation {
      * feature exists already.
      * @return collection of any features at this location
      */
-    public Collection<DnaComponent> getSubComponents();
+    public Collection<DnaComponent> getFeatures();
 
     /**
      * First position of the Sequence Feature being annotated.
