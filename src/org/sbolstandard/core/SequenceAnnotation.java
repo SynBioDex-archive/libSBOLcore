@@ -19,7 +19,7 @@ public interface SequenceAnnotation {
 
     public Collection<SequenceAnnotation> getPrecedes();
 
-    public void addPreceds(SequenceAnnotation precedes);
+    public void addPrecedes(SequenceAnnotation precedes);
 
     /**
      * Place a SequenceFeature at this.start, .stop, .strand location.
