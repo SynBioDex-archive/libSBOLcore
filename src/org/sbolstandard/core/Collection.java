@@ -19,7 +19,7 @@ import java.util.HashSet;
 public interface Collection {
 
     public URI getURI();
-    public void setURI();
+    public void setURI(URI uri);
 
     /**
      * Elements that are intended as engineering components in synthetic biology.

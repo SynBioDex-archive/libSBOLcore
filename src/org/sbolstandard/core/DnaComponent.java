@@ -16,7 +16,7 @@ import java.util.HashSet;
 public interface DnaComponent {
 
     public URI getURI();
-    public void setURI();
+    public void setURI(URI uri);
 
     /**
      * Positions and directions of <code>SequenceFeature</code>[s] that describe

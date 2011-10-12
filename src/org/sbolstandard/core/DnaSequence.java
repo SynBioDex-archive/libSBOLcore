@@ -16,7 +16,7 @@ import java.net.URI;
 public interface DnaSequence {
 
     public URI getURI();
-    public void setURI();
+    public void setURI(URI uri);
 
     /**
      * The sequence of DNA base pairs which are described.

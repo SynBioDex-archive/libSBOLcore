@@ -19,7 +19,7 @@ import java.util.Collection;
 public interface SequenceAnnotation {
 
     public URI getURI();
-    public void setURI();
+    public void setURI(URI uri);
 
     public Collection<SequenceAnnotation> getPrecedes();
     public void addPrecede(SequenceAnnotation precede);
