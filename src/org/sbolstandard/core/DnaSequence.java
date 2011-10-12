@@ -1,5 +1,7 @@
 package org.sbolstandard.core;
 
+import java.net.URI;
+
 /**
  * The SBOL data model's DnaSequence.
  *
@@ -12,6 +14,9 @@ package org.sbolstandard.core;
  * research heavily depends on this information.
  */
 public interface DnaSequence {
+
+    public URI getURI();
+    public void setURI();
 
     /**
      * The sequence of DNA base pairs which are described.

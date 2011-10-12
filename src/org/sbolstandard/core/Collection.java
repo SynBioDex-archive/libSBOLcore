@@ -1,6 +1,6 @@
 package org.sbolstandard.core;
 
-
+import java.net.URI;
 import java.util.HashSet;
 
 /**
@@ -17,6 +17,9 @@ import java.util.HashSet;
  */
 
 public interface Collection {
+
+    public URI getURI();
+    public void setURI();
 
     /**
      * Elements that are intended as engineering components in synthetic biology.
