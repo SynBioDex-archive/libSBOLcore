@@ -43,7 +43,8 @@ public interface Collection {
      * @param component a <code>DnaComponent</code> that should be a member of this collection
      */
     public void addComponent(DnaComponent component);
-
+	public void removeComponent(DnaComponent component);
+	
     /**
      * Text which is for users to read and interpret what this Collection is.
      * (eg "Collecting parts which could be used to build honey production directly into

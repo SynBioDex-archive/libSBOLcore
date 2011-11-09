@@ -34,7 +34,8 @@ public interface DnaComponent {
      * @param annotation a <code>SequenceAnnotation</code> that describes the DNA composition
      */
     public void addAnnotation(SequenceAnnotation annotation);
-
+	public void removeAnnotation(SequenceAnnotation annotation);
+	
     /**
      * Text which is for users to read and interpret what this component is.
      * (eg. engineered Lac promoter, repressible by LacI).
@@ -118,5 +119,5 @@ public interface DnaComponent {
      * @param type Sequence Ontology URI specifying the type of the DnaComponent
      */
     public void addType(URI type);
-
+	public void removeType(URI type);
 }

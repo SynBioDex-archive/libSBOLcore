@@ -23,9 +23,10 @@ public interface SequenceAnnotation {
 
     public Collection<SequenceAnnotation> getPrecedes();
     public void addPrecede(SequenceAnnotation precede);
+	public void removePrecede(SequenceAnnotation precede);
 
-    public void setSubComponent(DnaComponent subComponent);
     public DnaComponent getSubComponent();
+    public void setSubComponent(DnaComponent subComponent);
 
     /**
      * First position of the Sequence Feature being annotated.
